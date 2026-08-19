@@ -1,4 +1,4 @@
-# APS Editorial Intelligence
+# APS Skills
 
 **Agent-agnostic skills for deciding where a physics manuscript belongs in the
 American Physical Society / *Physical Review* journal portfolio — and how to
