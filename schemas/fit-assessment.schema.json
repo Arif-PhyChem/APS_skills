@@ -1,0 +1,466 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ariflab.org/schemas/aps-fit-assessment.schema.json",
+  "title": "APS Journal Fit Assessment",
+  "description": "Structured output contract for a single manuscript-to-journal fit assessment. Use when a caller wants machine-readable output instead of the prose format in each journal skill. Field meanings follow the skills; this schema does not relax any of their rules.",
+  "type": "object",
+  "required": [
+    "journal",
+    "journal_code",
+    "fit",
+    "scope_fit",
+    "primary_contribution",
+    "novelty",
+    "significance",
+    "breadth",
+    "why_this_journal",
+    "why_not_alternatives",
+    "confidence"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "journal": {
+      "type": "string"
+    },
+    "journal_code": {
+      "type": "string",
+      "enum": [
+        "prl",
+        "prx",
+        "prresearch",
+        "pra",
+        "prb",
+        "prc",
+        "prd",
+        "pre",
+        "prmaterials",
+        "prapplied",
+        "prfluids",
+        "prab",
+        "prper",
+        "prxquantum",
+        "prxenergy",
+        "prxlife",
+        "prxintelligence",
+        "rmp",
+        "apsos"
+      ]
+    },
+    "fit": {
+      "type": "string",
+      "enum": [
+        "Excellent",
+        "Strong",
+        "Moderate",
+        "Borderline",
+        "Poor"
+      ]
+    },
+    "scope_fit": {
+      "type": "string"
+    },
+    "primary_contribution": {
+      "type": "string"
+    },
+    "novelty": {
+      "type": "object",
+      "required": [
+        "assessment",
+        "kinds"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "assessment": {
+          "type": "string"
+        },
+        "kinds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "phenomenon",
+              "mechanism",
+              "material",
+              "measurement",
+              "method",
+              "tool",
+              "interpretation",
+              "synthesis"
+            ]
+          }
+        },
+        "relative_to_prior_art": {
+          "type": "string"
+        }
+      }
+    },
+    "significance": {
+      "type": "string"
+    },
+    "conceptual_advance": {
+      "type": "string"
+    },
+    "methodological_contribution": {
+      "type": "string"
+    },
+    "breadth": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "assessment": {
+          "type": "string"
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "criterion_claimed": {
+      "type": "string",
+      "description": "For journals with enumerated acceptance criteria (PRL, PRX, PRX Quantum, PRX Energy, PRX Intelligence): the specific criterion claimed, quoted or named, with justification."
+    },
+    "ai_ml_decomposition": {
+      "type": "object",
+      "description": "Required when the manuscript uses AI/ML. Mirrors the five-way decomposition in the PRX Intelligence and PRB skills.",
+      "additionalProperties": false,
+      "properties": {
+        "method_novelty": {
+          "type": "string"
+        },
+        "scientific_novelty": {
+          "type": "string"
+        },
+        "enablement": {
+          "type": "string"
+        },
+        "generality": {
+          "type": "string"
+        },
+        "validation_quality": {
+          "type": "string"
+        },
+        "validation_gate_met": {
+          "type": "boolean"
+        }
+      }
+    },
+    "strengths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "editorial_concerns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "why_this_journal": {
+      "type": "string"
+    },
+    "why_not_alternatives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "journal_code",
+          "reason"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "journal_code": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "positioning_changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "submission_considerations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fallback": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "journal_code": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "transfer_path": {
+          "type": "string"
+        }
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "required": [
+        "level"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "High",
+            "Medium",
+            "Low"
+          ]
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "what_would_change_it": {
+          "type": "string"
+        },
+        "staleness_flag": {
+          "type": "string",
+          "description": "Set when the journal skill's last_verified exceeds its refresh_interval_days."
+        }
+      }
+    },
+    "sources_consulted": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "url",
+          "accessed"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "accessed": {
+            "type": "string",
+            "format": "date"
+          },
+          "used_for": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "mathematical_presentation": {
+      "type": "object",
+      "description": "Required for theoretical, computational, or equation-driven manuscripts. Mirrors the Mathematical presentation profile in each journal skill and the framework in aps-mathematical-presentation. Omit, or set applicable=false, when the contribution is not equation-driven — manufacturing mathematical criticism of a measurement or characterization paper is a failure mode.",
+      "additionalProperties": false,
+      "properties": {
+        "applicable": {
+          "type": "boolean"
+        },
+        "central_mathematical_object": {
+          "type": "string",
+          "description": "The equation, relation, or model expressing the central contribution — or a note that the manuscript possesses one but never writes it down."
+        },
+        "representation_importance": {
+          "type": "string",
+          "enum": [
+            "Low",
+            "Moderate",
+            "High",
+            "Very High"
+          ]
+        },
+        "expected_density": {
+          "type": "string",
+          "enum": [
+            "Low",
+            "Moderate",
+            "High",
+            "Very high"
+          ]
+        },
+        "actual_density": {
+          "type": "string",
+          "enum": [
+            "Low",
+            "Moderate",
+            "High",
+            "Very high"
+          ]
+        },
+        "density_mismatch": {
+          "type": "string",
+          "description": "Placement information, not a defect: a density wrong for this journal is often right for a neighbor."
+        },
+        "role_of_equations": {
+          "type": "string"
+        },
+        "main_text_content": {
+          "type": "string"
+        },
+        "supplementary_content": {
+          "type": "string"
+        },
+        "recommended_derivation_depth": {
+          "type": "string"
+        },
+        "essential_equations_fit_format": {
+          "type": "boolean",
+          "description": "False means the article type or journal should change — never that an essential equation should be cut."
+        },
+        "equation_audit": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Displayed equations with no identifiable purpose, or algebra that does not advance the argument."
+        },
+        "interpretation_gaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Important equations presented without physical reading; undefined symbols; approximations without a validity regime."
+        },
+        "figure_equation_integration": {
+          "type": "string"
+        },
+        "mathematical_novelty_kind": {
+          "type": "string",
+          "enum": [
+            "new mathematics",
+            "new physical theory",
+            "new solution",
+            "new application",
+            "none"
+          ]
+        },
+        "presentation_strategy": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "presentation": {
+      "type": "object",
+      "description": "Format and presentation assessment. Mirrors the Presentation profile in each journal skill and aps-format-and-presentation. Every statement should be attributable to one of the bindingness labels.",
+      "additionalProperties": false,
+      "properties": {
+        "article_type": {
+          "type": "string"
+        },
+        "article_type_length_limit": {
+          "type": "string",
+          "description": "The journal's verified limit for this type, or 'No explicit limit stated in official sources'. Never estimated."
+        },
+        "limit_verified_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "within_length": {
+          "type": "boolean"
+        },
+        "available_containers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "main text",
+              "appendix",
+              "End Matter (PRL only)",
+              "Supplemental Material"
+            ]
+          }
+        },
+        "figure_strategy": {
+          "type": "string",
+          "description": "Derived from the scientific narrative. Never a target number, and never asserted as a journal requirement — no APS journal examined states a figure limit."
+        },
+        "figure_audit": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Figures proving nothing new, doing two jobs, or duplicating another; central claims lacking a figure."
+        },
+        "compression_opportunities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Related figures combinable into a unified multi-panel figure. Never unrelated results merged to reduce a count."
+        },
+        "misplaced_content": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Content essential to understanding or evaluating the central claim that sits in Supplemental Material — a defect, since APS defines SM as non-essential material."
+        },
+        "narrative_style": {
+          "type": "string"
+        },
+        "compactness": {
+          "type": "string",
+          "enum": [
+            "Low",
+            "Moderate",
+            "High"
+          ]
+        },
+        "presentation_priority": {
+          "type": "string"
+        },
+        "joint_submission_recommended": {
+          "type": "boolean",
+          "description": "True when the work is both pivotal and genuinely needs length; APS permits a Letter plus a longer article elsewhere."
+        },
+        "label_audit": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "statement",
+              "label"
+            ],
+            "properties": {
+              "statement": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string",
+                "enum": [
+                  "REQUIREMENT",
+                  "CONVENTION",
+                  "STRATEGY"
+                ]
+              },
+              "source_url": {
+                "type": "string",
+                "description": "Required for REQUIREMENT."
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$comment": "There is deliberately no field for predicted acceptance, acceptance probability, or editorial outcome. The skills forbid such predictions; the schema does not provide a place to record one. Likewise there is no field for equation count or a mathematical-quality score: density and hierarchy are fit and clarity dimensions, and mathematical complexity is never recorded as significance. Presentation advice carries a second labeling axis — REQUIREMENT / CONVENTION / STRATEGY — recorded in presentation.label_audit; a REQUIREMENT without a source_url is invalid."
+}
