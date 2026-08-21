@@ -460,7 +460,53 @@
           }
         }
       }
+    },
+    "references": {
+      "type": "object",
+      "description": "Reference-list audit. Mirrors aps-reference-format. Mechanics apply portfolio-wide; only journal-specific exception on record is PRL's titles-in-references convention.",
+      "additionalProperties": false,
+      "properties": {
+        "numbering_correct": {
+          "type": "boolean"
+        },
+        "completeness": {
+          "type": "string",
+          "description": "Any citation in main text, captions, or Supplemental Material missing from the list; any listed item never cited."
+        },
+        "author_count_handling_correct": {
+          "type": "boolean",
+          "description": "All authors listed up to ten; up to twenty plus et al. beyond that."
+        },
+        "urls_in_body_text": {
+          "type": "boolean",
+          "description": "Should be false — URLs belong in the reference list, not the body."
+        },
+        "eprints_used_as_primary_reference": {
+          "type": "boolean",
+          "description": "Should be false where a peer-reviewed version exists."
+        },
+        "currency": {
+          "type": "string",
+          "description": "Whether the list is up to date as of the current submission or revision."
+        },
+        "self_citation_share": {
+          "type": "string"
+        },
+        "representativeness": {
+          "type": "string",
+          "description": "Whether competing groups, regions, and institutions look represented — an APS-stated expectation, not only a formatting concern."
+        },
+        "bibtex_bbl_resolved": {
+          "type": "boolean"
+        },
+        "journal_specific_conventions_checked": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     }
   },
-  "$comment": "There is deliberately no field for predicted acceptance, acceptance probability, or editorial outcome. The skills forbid such predictions; the schema does not provide a place to record one. Likewise there is no field for equation count or a mathematical-quality score: density and hierarchy are fit and clarity dimensions, and mathematical complexity is never recorded as significance. Presentation advice carries a second labeling axis — REQUIREMENT / CONVENTION / STRATEGY — recorded in presentation.label_audit; a REQUIREMENT without a source_url is invalid."
+  "$comment": "There is deliberately no field for predicted acceptance, acceptance probability, or editorial outcome. The skills forbid such predictions; the schema does not provide a place to record one. Likewise there is no field for equation count or a mathematical-quality score: density and hierarchy are fit and clarity dimensions, and mathematical complexity is never recorded as significance. Presentation advice carries a second labeling axis — REQUIREMENT / CONVENTION / STRATEGY — recorded in presentation.label_audit; a REQUIREMENT without a source_url is invalid. There is likewise no numeric self-citation threshold field: APS states the principle (representativeness, no inflation), not a percentage, and the schema does not invent one."
 }

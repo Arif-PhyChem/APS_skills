@@ -1,4 +1,4 @@
-# Agent Instructions — APS Editorial Intelligence
+# Agent Instructions — APS Skills
 
 This repository is a set of Markdown skills for evaluating manuscripts against
 the APS / *Physical Review* journal portfolio. It is model- and vendor-neutral:
@@ -21,6 +21,7 @@ fetch URLs can execute it.
    | "Review this manuscript" | `skills/aps-manuscript-reviewer/SKILL.md` |
    | Theory, computation, or equation-driven work | add `skills/aps-mathematical-presentation/SKILL.md` |
    | Building or revising a manuscript (length, figures, containers, style) | add `skills/aps-format-and-presentation/SKILL.md` |
+   | Building or auditing the reference list | add `skills/aps-reference-format/SKILL.md` |
    | "Prepare the submission" | `skills/aps-submission-assistant/SKILL.md` + the target journal skill |
    | "Add/refresh a journal skill" | `generators/journal-skill-generator.md` and `generators/refresh-protocol.md` |
 
@@ -48,6 +49,10 @@ fetch URLs can execute it.
   Presentation profile.
 - **Label presentation advice** `[REQUIREMENT]` / `[CONVENTION]` / `[STRATEGY]`,
   and never assert a figure-count requirement — no APS journal examined states one.
+- **Treat referencing as an editorial standard.** APS states comprehensiveness,
+  field-representativeness, and freedom from citation-count inflation as
+  submission expectations, not style preference — check for them, don't only
+  format around them.
 - **Fetch volatile facts** — length limits, required submission components,
   current article types — from the journal's author page at use time.
 - **Check staleness.** If a skill's `last_verified` is older than its

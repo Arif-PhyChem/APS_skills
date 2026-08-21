@@ -7,7 +7,7 @@ version: 2026-08-19
 last_verified: 2026-08-19
 refresh_interval_days: 90
 requires: [aps-common]
-companion_skills: [aps-mathematical-presentation, aps-format-and-presentation]
+companion_skills: [aps-mathematical-presentation, aps-format-and-presentation, aps-reference-format]
 ---
 
 # APS Submission Assistant
@@ -85,7 +85,8 @@ Portfolio-general; confirm specifics on the journal's author page.
 - [ ] Data availability statement
 - [ ] Code/software availability statement where applicable
 - [ ] AI-tool use disclosure per current APS ethics policy
-- [ ] References complete and formatted per APS style
+- [ ] References complete and formatted per APS style (`aps-reference-format`): numbered consecutively by first citation, no URLs in body text, author lists per the ten/twenty-name rule, `.bbl` resolved and included for REVTeX/LaTeX
+- [ ] Reference list checked for self-citation share and representativeness of the field — an APS-stated editorial expectation, not only formatting
 - [ ] Figures at required resolution, legible in print, colorblind-safe
 - [ ] Tables formatted; long tables moved to supplemental material
 - [ ] Supplemental material scoped per APS policy and referenced from the text

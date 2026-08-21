@@ -7,7 +7,7 @@ version: 2026-08-19
 last_verified: 2026-08-19
 refresh_interval_days: 90
 requires: [aps-common]
-companion_skills: [aps-mathematical-presentation, aps-format-and-presentation]
+companion_skills: [aps-mathematical-presentation, aps-format-and-presentation, aps-reference-format]
 ---
 
 # APS Journal Selector

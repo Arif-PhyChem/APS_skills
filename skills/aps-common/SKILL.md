@@ -190,6 +190,10 @@ Relevant because they are what "editorial interest" concretely looks like:
 12. **Label presentation advice** `[REQUIREMENT]` (official rule),
    `[CONVENTION]` (strong practice), or `[STRATEGY]` (recommendation). Authors
    are entitled to know which constraints are real.
+13. **Referencing is an editorial standard, not just a format rule.**
+   Comprehensiveness, representativeness, and freedom from citation-count
+   inflation are APS submission expectations, stated as policy — not merely
+   style. Load `aps-reference-format` for the mechanics and the standard.
 
 ## 9. Fetching APS pages (practical) `[HEURISTIC]`
 

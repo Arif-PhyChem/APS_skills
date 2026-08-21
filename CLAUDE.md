@@ -1,4 +1,4 @@
-# APS Editorial Intelligence — Claude Code
+# APS Skills — Claude Code
 
 Follow [AGENTS.md](AGENTS.md). It is the single, vendor-neutral instruction file
 for this repository; nothing here overrides it.

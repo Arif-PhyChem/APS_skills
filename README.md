@@ -28,6 +28,7 @@ vendor lock-in.
 | [`aps-manuscript-reviewer`](skills/aps-manuscript-reviewer/SKILL.md) | "Is this sound, and what will a referee object to?" — journal-independent |
 | [`aps-mathematical-presentation`](skills/aps-mathematical-presentation/SKILL.md) | How equations should function as scientific content: what to put in the main text, what belongs in an appendix, how figures should test a formulation |
 | [`aps-format-and-presentation`](skills/aps-format-and-presentation/SKILL.md) | Length, article type, figure strategy, Supplemental Material — with verified limits per journal |
+| [`aps-reference-format`](skills/aps-reference-format/SKILL.md) | Reference-list mechanics (numbering, citation, author counts) and APS's stated referencing ethics (comprehensiveness, no self-citation inflation) — portfolio-wide, one journal-specific exception noted |
 | [`aps-submission-assistant`](skills/aps-submission-assistant/SKILL.md) | Cover letter, criteria-justification statement, submission checklist, response-to-referees |
 | [`aps-common`](skills/aps-common/SKILL.md) | Portfolio-wide policies, vocabulary, and rules every other skill assumes |
 | [`skills/journals/*`](skills/journals/) | One skill per journal — scope, official acceptance criteria, neighbor comparisons, fit classification, verified length limits |
@@ -99,6 +100,7 @@ aps-journal-selector ─────── extract profile → routing gates →
     ├── loads 2–5 journal skills on demand (not all 19)
     ├── + aps-mathematical-presentation, if equation-driven
     ├── + aps-format-and-presentation, when building or revising
+    ├── + aps-reference-format, when building or auditing references
     │
     ▼
 Ranked recommendation ─────── fit class, why #1 beats #2, editorial risks
@@ -123,6 +125,7 @@ skill set.
 7. **Equations are scientific content**, not formatting — never cut an essential one for length, never add one for the appearance of rigor, never invent notation on an author's behalf.
 8. **Format is not uniform across the portfolio.** Length limits and mechanisms genuinely differ between journals (PRL's "End Matter" appendix exists nowhere else in the portfolio, for example) — never generalize one journal's convention to another.
 9. **No APS journal examined states a figure-count limit.** The skills say so explicitly rather than inventing one.
+10. **Referencing is an editorial standard, not just formatting.** APS states comprehensiveness, representativeness, and freedom from citation-count inflation as submission expectations — a skewed or self-citation-heavy reference list is a documented concern, not merely a style nitpick.
 
 ## Verification and staleness
 
@@ -146,7 +149,7 @@ guidelines.
 ## Repository layout
 
 ```
-aps-editorial-intelligence/
+aps-skills/
 ├── README.md                    you are here
 ├── LICENSE                      MIT
 ├── AGENTS.md                    entry point for any agent
@@ -162,6 +165,7 @@ aps-editorial-intelligence/
     ├── aps-common/                     portfolio-wide policies (load once)
     ├── aps-mathematical-presentation/  equations as scientific content
     ├── aps-format-and-presentation/    length, figures, style, containers
+    ├── aps-reference-format/           reference-list mechanics and ethics
     ├── aps-journal-selector/           cross-journal recommendation
     ├── aps-manuscript-reviewer/        scientific + editorial assessment
     ├── aps-submission-assistant/       cover letter, checklist, response letters

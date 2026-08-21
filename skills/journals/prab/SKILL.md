@@ -12,7 +12,7 @@ refresh_interval_days: 90
 source_domain: journals.aps.org
 source_verified: true
 requires: [aps-common]
-companion_skills: [aps-mathematical-presentation, aps-format-and-presentation]
+companion_skills: [aps-mathematical-presentation, aps-format-and-presentation, aps-reference-format]
 ---
 
 # Physical Review Accelerators and Beams — Journal Skill
@@ -26,6 +26,11 @@ calibration.
 construction or revision** — length, figures, main-text vs Supplemental
 Material, narrative style. See §Presentation profile below for this journal's
 verified limits and calibration.
+
+**Load `aps-reference-format` whenever building, reviewing, or auditing the
+reference list** — numbering and citation mechanics apply portfolio-wide; check
+this journal's own skill only for a journal-specific addition (PRL's
+titles-in-references convention is the only one on record).
 
 ## 1. Identity `[OFFICIAL]`
 

@@ -291,6 +291,10 @@ Constraints on this section:
 - Never invent notation. Example equations in a skill must be generic
   illustrations of a *form*, never fabricated results attributed to anyone.
 
+### References (mandatory pointer)
+
+Every generated journal skill must declare `aps-reference-format` in its `companion_skills` frontmatter and, near the top of the skill, state whether this journal adds anything to the portfolio-wide reference mechanics — most will not (PRL's titles-in-references convention is the only one on record). Never restate the numbering/citation/author-count mechanics inside a journal skill; those live once, centrally, in `aps-reference-format`.
+
 ### Format and presentation (mandatory section)
 
 Physical Review journals do **not** share one manuscript format. Research and

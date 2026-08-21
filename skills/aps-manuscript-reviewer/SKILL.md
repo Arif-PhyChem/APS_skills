@@ -7,7 +7,7 @@ version: 2026-08-19
 last_verified: 2026-08-19
 refresh_interval_days: 90
 requires: [aps-common]
-companion_skills: [aps-mathematical-presentation, aps-format-and-presentation]
+companion_skills: [aps-mathematical-presentation, aps-format-and-presentation, aps-reference-format]
 ---
 
 # APS Manuscript Reviewer
@@ -137,6 +137,7 @@ Material — load `aps-format-and-presentation` and report against its framework
 - Do figures carry the argument, or only the data?
 - Are limitations stated, or hidden?
 - Is prior work cited fairly, including competing groups and negative results?
+- Load `aps-reference-format` and audit the reference list: numbering, completeness (including captions and Supplemental Material), author-count handling, e-print-vs-primary-reference use, and — the APS-stated editorial concern, not just formatting — self-citation share and representativeness of the field.
 - **Figure audit** — what does each figure prove? Any figure proving nothing the
   text does not already establish, any figure doing two jobs, any pair doing one
   job, any central claim with no figure?
